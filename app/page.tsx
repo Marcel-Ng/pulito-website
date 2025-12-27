@@ -1,65 +1,166 @@
 import Image from "next/image";
+import Header from "./components/header";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-gray-900 text-white font-manrope">
+      <Header />
+      {/* Hero Section */}
+      {/* Hero Section - Gokada Style Full-Screen Minimal */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-gray-900 px-6 text-center">
+        {/* Optional subtle overlay for depth */}
+        <div className="absolute inset-0 bg-black/30"></div>
+
+        <div className="relative max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tight mb-8">
+            The easiest laundry
+            <br />
+            and delivery service
+            <br />
+            in Nigeria.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-16">
+            Trusted Partners. Clear Prices. Pickup & Delivery. Stress-Free
+            Laundry.
+          </p>
+
+          <button className="bg-teal-400 text-gray-900 text-xl md:text-2xl px-10 py-4 rounded-full font-bold hover:bg-teal-300 transition shadow-lg">
+            Request Pickup Now
+          </button>
+
+          <p className="mt-8 text-lg text-gray-500">
+            Currently Serving Lagos, Nigeria.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+      {/* What Pulito Does */}
+      <section className="py-28 px-6 bg-gray-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-10 tracking-tight">
+            Finding a good laundry shouldn’t be hard.
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Pulito connects customers to trusted local laundries, manages pickup
+            and delivery, and ensures clear pricing and timelines — for a better
+            experience on both sides.
+          </p>
         </div>
-      </main>
-    </div>
+      </section>
+      {/* How It Works */}
+      <section id="how" className="py-28 px-6 bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-20 tracking-tight">
+            How It Works
+          </h2>
+          <div className="grid md:grid-cols-4 gap-12 text-center">
+            <div>
+              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
+                <p className="text-gray-500 text-center px-4">
+                  Image: Request pickup
+                </p>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">1. Request a pickup</h3>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                Tell us where you are and what you need washed.
+              </p>
+            </div>
+            <div>
+              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
+                <p className="text-gray-500 text-center px-4">
+                  Image: We match you
+                </p>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">2. We match you</h3>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                Pulito connects you to a trusted laundry partner.
+              </p>
+            </div>
+            <div>
+              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
+                <p className="text-gray-500 text-center px-4">
+                  Image: Clothes get washed
+                </p>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">3. Clothes get washed</h3>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                Professional cleaning with care.
+              </p>
+            </div>
+            <div>
+              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
+                <p className="text-gray-500 text-center px-4">
+                  Image: Delivered back
+                </p>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">4. Delivered back</h3>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                Clean clothes returned on time.
+              </p>
+            </div>
+          </div>
+          <p className="text-5xl md:text-6xl font-extrabold text-center mt-20 text-teal-400 tracking-tight">
+            Simple.
+          </p>
+        </div>
+      </section>
+      {/* Trusted Partners Section 1 - Text Left, Image Right */}
+      <section className="py-28 px-6 bg-gray-900">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="text-left">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight">
+              The best laundry partners
+              <br />
+              you have ever seen
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+              First, they perfected cleaning your clothes.
+              <br />
+              Now, they deliver with care and professionalism.
+            </p>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <div className="bg-gray-800 rounded-3xl w-96 h-96 md:w-full md:max-w-lg md:h-auto overflow-hidden border-2 border-dashed border-gray-600 flex items-center justify-center">
+              {/* Placeholder - replace src with your real image */}
+              <p className="text-gray-500 text-center px-8">
+                Image: Smiling professional laundry delivery partner
+              </p>
+              {/* Example with real image later: <Image src="/partner1.jpg" width={800} height={800} alt="Trusted laundry partner" className="object-cover" /> */}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Trusted Partners Section 2 - Image Left, Text Right */}
+      <section className="py-28 px-6 bg-gray-800">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="flex justify-center md:justify-start order-2 md:order-1">
+            <div className="bg-gray-800 rounded-3xl w-96 h-96 md:w-full md:max-w-lg md:h-auto overflow-hidden border-2 border-dashed border-gray-600 flex items-center justify-center">
+              {/* Placeholder */}
+              <p className="text-gray-500 text-center px-8">
+                Image: Group of quality laundry riders/partners
+              </p>
+            </div>
+          </div>
+          <div className="text-left order-1 md:order-2">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight">
+              Quality riders and
+              <br />
+              trusted partners
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+              Vetted, trained, and dedicated — ensuring your clothes are handled
+              with the utmost care from pickup to delivery.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* Add the rest of your sections here with similar typography adjustments... */}
+      {/* Footer */}
+      <footer className="py-16 px-6 bg-black text-center">
+        <p className="text-4xl md:text-5xl font-extrabold text-teal-400 tracking-tight">
+          Pulito — Cleaning made easy.
+        </p>
+      </footer>
+    </main>
   );
 }
