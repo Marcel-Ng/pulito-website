@@ -1,39 +1,19 @@
+// for.  the animations alone both the use client
+"use client"; // Add this at top of page.tsx if not already (for animations)
+
 import Image from "next/image";
 import Header from "./components/header";
+
+import { motion } from "framer-motion";
+import { CyclingTypewriter } from "./components/typwriter";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-900 text-white font-manrope">
       <Header />
       {/* Hero Section */}
-      {/* Hero Section - Gokada Style Full-Screen Minimal */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-gray-900 px-6 text-center">
-        {/* Optional subtle overlay for depth */}
-        <div className="absolute inset-0 bg-black/30"></div>
+      <Hero />
 
-        <div className="relative max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tight mb-8">
-            The easiest laundry
-            <br />
-            and delivery service
-            <br />
-            in Nigeria.
-          </h1>
-
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-16">
-            Trusted Partners. Clear Prices. Pickup & Delivery. Stress-Free
-            Laundry.
-          </p>
-
-          <button className="bg-teal-400 text-gray-900 text-xl md:text-2xl px-10 py-4 rounded-full font-bold hover:bg-teal-300 transition shadow-lg">
-            Request Pickup Now
-          </button>
-
-          <p className="mt-8 text-lg text-gray-500">
-            Currently Serving Lagos, Nigeria.
-          </p>
-        </div>
-      </section>
       {/* What Pulito Does */}
       <section className="py-28 px-6 bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
@@ -48,7 +28,7 @@ export default function Home() {
         </div>
       </section>
       {/* How It Works */}
-      <section id="how" className="py-28 px-6 bg-gray-900">
+      {/* <section id="how" className="py-28 px-6 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-20 tracking-tight">
             How It Works
@@ -103,7 +83,9 @@ export default function Home() {
             Simple.
           </p>
         </div>
-      </section>
+      </section> */}
+
+      <HowItWorks />
       {/* Trusted Partners Section 1 - Text Left, Image Right */}
       <section className="py-28 px-6 bg-gray-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -162,5 +144,146 @@ export default function Home() {
         </p>
       </footer>
     </main>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-gray-900 px-6 text-center">
+      {/*  bg-black/10 */}
+      <div className="absolute inset-0">
+        <Image
+          src="/hero-bg.jpg"
+          fill
+          alt=""
+          className="object-cover opacity-40"
+        />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tight mb-8"
+        >
+          The easiest laundry
+          <br />
+          and delivery service
+          <br />
+          in Nigeria.
+        </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-16"
+        >
+          {/* Trusted Partners. Clear Prices. Pickup & Delivery. Stress-Free
+          Laundry. */}
+          <CyclingTypewriter />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          <button className="bg-teal-400 text-gray-900 text-xl md:text-2xl px-10 py-4 rounded-full font-bold hover:bg-teal-300 hover:scale-105 transition shadow-lg">
+            Request Pickup Now
+          </button>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="mt-8 text-lg text-gray-500"
+        >
+          Currently Serving Lagos, Nigeria.
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+function HowItWorks() {
+  return (
+    <section id="how" className="py-28 px-6 bg-gray-900">
+      <div className="max-w-6xl mx-auto">
+        {/* Animated Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-5xl md:text-6xl font-extrabold text-center mb-20 tracking-tight"
+        >
+          How It Works
+        </motion.h2>
+
+        {/* Steps Grid with Staggered Animation */}
+        <div className="grid md:grid-cols-4 gap-12 text-center">
+          {[
+            {
+              title: "1. Request a pickup",
+              desc: "Tell us where you are and what you need washed.",
+              placeholder: "Image: Request pickup",
+            },
+            {
+              title: "2. We match you",
+              desc: "Pulito connects you to a trusted laundry partner.",
+              placeholder: "Image: We match you",
+            },
+            {
+              title: "3. Clothes get washed",
+              desc: "Professional cleaning with care.",
+              placeholder: "Image: Clothes get washed",
+            },
+            {
+              title: "4. Delivered back",
+              desc: "Clean clothes returned on time.",
+              placeholder: "Image: Delivered back",
+            },
+          ].map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.2, // Stagger: each card appears 0.2s after the previous
+                ease: "easeOut",
+              }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="flex flex-col items-center"
+            >
+              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
+                <p className="text-gray-500 text-center px-4">
+                  {step.placeholder}
+                </p>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">{step.title}</h3>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                {step.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Final "Simple." with pop-in */}
+        <motion.p
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.8 }} // Appears after steps finish
+          className="text-5xl md:text-6xl font-extrabold text-center mt-20 text-teal-400 tracking-tight"
+        >
+          Simple.
+        </motion.p>
+      </div>
+    </section>
   );
 }
