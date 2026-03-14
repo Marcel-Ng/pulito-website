@@ -27,63 +27,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-      {/* How It Works */}
-      {/* <section id="how" className="py-28 px-6 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-20 tracking-tight">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-4 gap-12 text-center">
-            <div>
-              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
-                <p className="text-gray-500 text-center px-4">
-                  Image: Request pickup
-                </p>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">1. Request a pickup</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                Tell us where you are and what you need washed.
-              </p>
-            </div>
-            <div>
-              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
-                <p className="text-gray-500 text-center px-4">
-                  Image: We match you
-                </p>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">2. We match you</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                Pulito connects you to a trusted laundry partner.
-              </p>
-            </div>
-            <div>
-              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
-                <p className="text-gray-500 text-center px-4">
-                  Image: Clothes get washed
-                </p>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">3. Clothes get washed</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                Professional cleaning with care.
-              </p>
-            </div>
-            <div>
-              <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
-                <p className="text-gray-500 text-center px-4">
-                  Image: Delivered back
-                </p>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">4. Delivered back</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                Clean clothes returned on time.
-              </p>
-            </div>
-          </div>
-          <p className="text-5xl md:text-6xl font-extrabold text-center mt-20 text-teal-400 tracking-tight">
-            Simple.
-          </p>
-        </div>
-      </section> */}
 
       <HowItWorks />
       {/* Trusted Partners Section 1 - Text Left, Image Right */}
@@ -103,11 +46,13 @@ export default function Home() {
           </div>
           <div className="flex justify-center md:justify-end">
             <div className="bg-gray-800 rounded-3xl w-96 h-96 md:w-full md:max-w-lg md:h-auto overflow-hidden border-2 border-dashed border-gray-600 flex items-center justify-center">
-              {/* Placeholder - replace src with your real image */}
-              <p className="text-gray-500 text-center px-8">
-                Image: Smiling professional laundry delivery partner
-              </p>
-              {/* Example with real image later: <Image src="/partner1.jpg" width={800} height={800} alt="Trusted laundry partner" className="object-cover" /> */}
+              <Image
+                src="/laundry-professionals.png"
+                width={800}
+                height={800}
+                alt="Trusted laundry partner"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -117,10 +62,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="flex justify-center md:justify-start order-2 md:order-1">
             <div className="bg-gray-800 rounded-3xl w-96 h-96 md:w-full md:max-w-lg md:h-auto overflow-hidden border-2 border-dashed border-gray-600 flex items-center justify-center">
-              {/* Placeholder */}
-              <p className="text-gray-500 text-center px-8">
-                Image: Group of quality laundry riders/partners
-              </p>
+              <Image
+                src="/delivery-man.png"
+                width={800}
+                height={800}
+                alt="Trusted laundry partner"
+                className="object-cover"
+              />
             </div>
           </div>
           <div className="text-left order-1 md:order-2">
@@ -141,6 +89,13 @@ export default function Home() {
       <footer className="py-16 px-6 bg-black text-center">
         <p className="text-4xl md:text-5xl font-extrabold text-teal-400 tracking-tight">
           Pulito — Cleaning made easy.
+        </p>
+
+        <p></p>
+        <p className="">
+          Address: 1 Engineering Close, Victoria Island, Lagos 106104, Lagos,{" "}
+          <br />
+          Nigeria Phone: +23408036202022
         </p>
       </footer>
     </main>
@@ -229,7 +184,7 @@ function HowItWorks() {
             {
               title: "1. Request a pickup",
               desc: "Tell us where you are and what you need washed.",
-              placeholder: "Image: Request pickup",
+              placeholder: "/satisfied-family.png",
             },
             {
               title: "2. We match you",
@@ -261,9 +216,17 @@ function HowItWorks() {
               className="flex flex-col items-center"
             >
               <div className="bg-gray-800 rounded-2xl w-72 h-72 mx-auto mb-8 flex items-center justify-center border-2 border-dashed border-gray-600">
-                <p className="text-gray-500 text-center px-4">
+                {/* <p className="text-gray-500 text-center px-4">
                   {step.placeholder}
-                </p>
+                </p> */}
+
+                <Image
+                  src="/satisfied-family.png"
+                  width={800}
+                  height={800}
+                  alt="Trusted laundry partner"
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4">{step.title}</h3>
               <p className="text-lg text-gray-400 leading-relaxed">
