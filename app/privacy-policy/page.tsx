@@ -1,7 +1,16 @@
+import Header from "../components/header";
+
 export default function PrivacyPolicyPage() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+    //  className="max-w-4xl mx-auto px-6 py-12"
+    <main className="min-h-screen bg-gray-900 text-white font-manrope max-w-4xl mx-auto px-6 py-12">
+      <Header />
+
+      <h1 className="mb-8"></h1>
+      <h1 className="mb-8"></h1>
+      <h1 className="mb-8"></h1>
+
+      <h1 className="text-4xl font-bold mb-8 mt-8">Privacy Policy</h1>
 
       <p className="mb-6 text-gray-600">Last Updated: May 2026</p>
 
