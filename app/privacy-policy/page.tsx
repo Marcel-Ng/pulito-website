@@ -105,7 +105,7 @@ export default function PrivacyPolicyPage() {
 
           <PolicySection
             title="15. Contact Us"
-            content="For privacy concerns, access requests, corrections, or complaints, contact us at hello@getpulito.com."
+            content="For privacy concerns, access requests, corrections, or complaints, contact us at support@getpulito.com."
           />
 
           <PolicySection
